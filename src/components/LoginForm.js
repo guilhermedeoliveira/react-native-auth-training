@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import { TextInput } from 'react-native';
 
 import { Button, Card, CardSection } from './common';
 
 class LoginForm extends Component {
+  state = { text: '' };
+
   render() {
     <Card>
-      <CardSection></CardSection>
+      <CardSection>
+        <TextInput
+          value={this.state.text}
+          onChangeText={text => this.setState({ text })}
+        />
+      </CardSection>
 
       <CardSection></CardSection>
 
@@ -15,7 +23,7 @@ class LoginForm extends Component {
         </Button>
       </CardSection>
     </Card>
-  };
+  }
 }
 
 export default LoginForm;
